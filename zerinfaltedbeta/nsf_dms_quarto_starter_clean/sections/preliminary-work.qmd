@@ -1,0 +1,20 @@
+## 8. Preliminary Work
+
+Our preliminary work establishes feasibility of the proposed research.
+
+### Preliminary Result 1
+
+[Describe preliminary analysis.]
+
+
+
+### Preliminary Result 2
+
+[Describe second result.]
+
+| Method | Bias | RMSE | Coverage |
+|---|---:|---:|---:|
+| [Existing method] | [ ] | [ ] | [ ] |
+| [Proposed method] | [ ] | [ ] | [ ] |
+
+These preliminary results motivate the proposed development of [METHOD].

@@ -1,0 +1,33 @@
+## Overview
+
+[State the scientific problem in one or two sentences.]
+
+[Explain why the problem matters and what is currently missing.]
+
+[State the central research objective and the overall strategy.]
+
+The central hypothesis is that **[CENTRAL HYPOTHESIS]**.
+
+The project will pursue three complementary aims:
+
+1. **Aim 1:** [FOUNDATIONAL THEORY OR METHOD]
+2. **Aim 2:** [STATISTICAL METHODOLOGY]
+3. **Aim 3:** [VALIDATION, COMPUTATION, OR SCIENTIFIC APPLICATION]
+
+The expected outcome is [MAIN CONTRIBUTION].
+
+## Intellectual Merit
+
+[Explain the fundamental statistical/mathematical knowledge that will be advanced.]
+
+[Describe what is genuinely new relative to existing theory and methods.]
+
+[State the expected theoretical, methodological, or computational contributions.]
+
+## Broader Impacts
+
+[Describe concrete impacts through training, software, data, education,
+interdisciplinary research, dissemination, broadening participation, or
+other appropriate mechanisms.]
+
+[State how impacts will be assessed.]

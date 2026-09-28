@@ -1,0 +1,32 @@
+## 7. Aim 3: [VALIDATION OR SCIENTIFIC APPLICATION]
+
+### Scientific Context
+
+[Describe the scientific problem for which the proposed methodology is relevant.]
+
+### Data
+
+[Describe data source, sample size, variables, and study design.]
+
+### Analysis
+
+[Specify primary analysis.]
+
+[Specify secondary analyses.]
+
+[Specify sensitivity analyses.]
+
+### Validation
+
+[Describe external validation, simulation-based calibration, held-out prediction,
+replication, or other validation strategy.]
+
+
+### Expected Outcomes
+
+[Expected scientific contribution.]
+
+### Integration Across Aims
+
+[Explain how Aim 3 tests whether the theory and methodology developed in Aims 1
+and 2 produce useful scientific knowledge.]

@@ -1,0 +1,42 @@
+---
+title: "Stat: Penalized Zero-Inflated Beta Regression"
+author: "Swarnali Banerjee and Gregory J. Matthews"
+date: "September 17, 2026"  #`r format(Sys.Date(), '%B %d, %Y')`
+---
+
+<!-- ```{r} -->
+<!-- #| include: false -->
+<!-- source("R/grant_checks.R") -->
+<!-- source("R/figures.R") -->
+<!-- ``` -->
+
+# Project Summary
+
+{{< include sections/project-summary.qmd >}}
+
+# Project Description
+
+{{< include sections/introduction.qmd >}}
+
+{{< include sections/research-plan.qmd >}}
+
+{{< include sections/aim-1.qmd >}}
+
+{{< include sections/aim-2.qmd >}}
+
+{{< include sections/aim-3.qmd >}}
+
+{{< include sections/preliminary-work.qmd >}}
+
+{{< include sections/intellectual-merit.qmd >}}
+
+{{< include sections/broader-impacts.qmd >}}
+
+{{< include sections/timeline.qmd >}}
+
+{{< include sections/prior-nsf-support.qmd >}}
+
+# References Cited
+
+::: {#refs}
+:::

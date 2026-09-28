@@ -1,0 +1,29 @@
+## 12. Results from Prior NSF Support
+
+### Award [AWARD NUMBER]
+
+**Title:** [TITLE]  
+**Amount:** $[AMOUNT]  
+**Period:** [START--END]
+
+#### Intellectual Merit
+
+[Results.]
+
+#### Broader Impacts
+
+[Results.]
+
+#### Publications and Products
+
+[Publications, software, datasets, presentations, or other products.]
+
+#### Relationship to Proposed Work
+
+[Explain relationship to the current project.]
+
+### Award [SECOND AWARD, IF APPLICABLE]
+
+[Repeat structure.]
+
+If no qualifying prior NSF support exists, replace this section with the appropriate NSF-required statement.

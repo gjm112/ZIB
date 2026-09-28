@@ -1,0 +1,32 @@
+## 11. Timeline and Project Management
+
+The project will be conducted over four years.
+
+| Activity | Year 1 | Year 2 | Year 3 | Year 4 |
+|---|:---:|:---:|:---:|:---:|
+| Aim 1 | X | X | | |
+| Aim 2 | | X | X | |
+| Aim 3 | | | X | X |
+| Software | X | X | X | X |
+| Student training | X | X | X | X |
+| Dissemination | | X | X | X |
+
+### Year 1
+
+[Milestones.]
+
+### Year 2
+
+[Milestones.]
+
+### Year 3
+
+[Milestones.]
+
+### Year 4
+
+[Milestones.]
+
+### Risk Management
+
+[Describe dependencies and contingency plans.]

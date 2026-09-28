@@ -1,0 +1,48 @@
+## 6. Aim 2: [STATISTICAL METHODOLOGY]
+
+### Motivation
+
+[Explain why Aim 1 is insufficient by itself and what methodological problem remains.]
+
+### Proposed Method
+
+[Detailed description of estimator/model/algorithm.]
+
+The proposed estimator is
+
+$$
+\widehat{\theta} = [FORMULA].
+$$
+
+[Explain estimation.]
+
+[Explain uncertainty quantification.]
+
+[Explain computational implementation.]
+
+### Benchmarking
+
+The proposed method will be compared descriptively with established alternatives including [METHOD 1], [METHOD 2], and [METHOD 3].
+
+Evaluation will consider statistical performance, robustness, interpretability, and computational scalability.
+
+
+### Software
+
+The methods will be implemented in an open-source R package, tentatively named `[PACKAGE NAME]`.
+
+The package will include:
+
+- reproducible implementations of all proposed methods;
+- simulation utilities;
+- diagnostics;
+- documentation and examples; and
+- vignettes reproducing the principal analyses.
+
+### Expected Outcomes
+
+[Expected contribution.]
+
+### Potential Problems and Alternative Strategies
+
+[Potential problem and alternative.]

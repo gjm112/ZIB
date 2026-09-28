@@ -1,0 +1,33 @@
+## 1. Motivation and Background
+
+Proportion data arise in many scientific settings.  Examples 1, 2, 3 etc.  Traditionally this type of data has modeled using normal regressions techniques with transformations of the response variable such as the the arcsin square root transformation.  However, this method is known to be flawed.  Some have even referred to it as "asinine".  Other alternatives include using logistic/ binomial regression, however, these require the statistical practitioner to know the denominator (i.e. the $n$ of these proportions).  In many settings all we have is the proportion.  In these cases, a better alternative is beta regression (CITATION).  Beta regression is well studied (IS IT?) with established packages available in R. @Kosmidis2026
+
+https://pubmed.ncbi.nlm.nih.gov/21560670/
+
+[Introduce the broad scientific or statistical problem.]
+
+[Explain the current state of knowledge.]
+
+[Identify the specific limitation or gap.]
+
+For example, existing approaches typically rely on [ASSUMPTION], which is problematic when [SETTING]. Existing methods such as [METHODS] provide useful solutions, but do not address [SPECIFIC GAP] [@example2024].
+
+The proposed research addresses this gap by developing [NEW FRAMEWORK].
+
+## 2. Central Research Question
+
+The central research question is:
+
+> **[CENTRAL RESEARCH QUESTION]**
+
+The project is guided by the following hypothesis:
+
+> **[CENTRAL HYPOTHESIS]**
+
+## 3. Overall Strategy
+
+The proposed work combines [THEORY], [STATISTICAL METHODOLOGY], and [COMPUTATION/APPLICATION].
+
+The aims are deliberately complementary. Aim 1 establishes [FOUNDATION]; Aim 2 develops [METHOD]; and Aim 3 evaluates and demonstrates [CONTRIBUTION].
+
+The project is designed so that failure of any single technical approach will not prevent progress toward the overall objective.

@@ -1,0 +1,61 @@
+## 5. Aim 1: [FOUNDATIONAL THEORY OR METHOD]
+
+### Motivation
+
+[Explain the specific gap addressed by Aim 1.]
+
+### Research Question
+
+[Specific question.]
+
+### Proposed Approach
+
+We will develop [METHOD].
+
+Let $Y$ denote [OUTCOME], $X$ denote [COVARIATES], and $\theta$ denote [PARAMETERS]. We consider the general model
+
+$$
+[MODEL]
+$$
+
+The principal theoretical objectives are:
+
+1. [OBJECTIVE]
+2. [OBJECTIVE]
+3. [OBJECTIVE]
+
+### Theoretical Development
+
+[Describe identifiability.]
+
+[Describe consistency.]
+
+[Describe asymptotic behavior.]
+
+[Describe efficiency, robustness, or other relevant properties.]
+
+### Simulation Study
+
+The simulation study will vary:
+
+| Factor | Levels |
+|---|---|
+| Sample size | [LEVELS] |
+| Signal strength | [LEVELS] |
+| Missingness/dependence structure | [LEVELS] |
+| Model misspecification | [LEVELS] |
+
+Primary performance measures will include [BIAS], [RMSE], [COVERAGE], [POWER], and [COMPUTATIONAL COST].
+
+
+### Expected Outcomes
+
+Aim 1 will establish [EXPECTED CONTRIBUTION].
+
+### Potential Problems and Alternative Strategies
+
+[Technical risk.]
+
+[Alternative strategy.]
+
+[Criteria for adopting the alternative.]

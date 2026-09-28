@@ -1,0 +1,795 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  letterpaper,
+]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Stat: Penalized Zero-Inflated Beta Regression},
+  pdfauthor={Swarnali Banerjee and Gregory J. Matthews},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Stat: Penalized Zero-Inflated Beta Regression}
+\author{Swarnali Banerjee and Gregory J. Matthews}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+
+\setstretch{1}
+\section{Project Summary}\label{project-summary}
+
+\subsection{Overview}\label{overview}
+
+{[}State the scientific problem in one or two sentences.{]}
+
+{[}Explain why the problem matters and what is currently missing.{]}
+
+{[}State the central research objective and the overall strategy.{]}
+
+The central hypothesis is that \textbf{{[}CENTRAL HYPOTHESIS{]}}.
+
+The project will pursue three complementary aims:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Aim 1:} {[}FOUNDATIONAL THEORY OR METHOD{]}
+\item
+  \textbf{Aim 2:} {[}STATISTICAL METHODOLOGY{]}
+\item
+  \textbf{Aim 3:} {[}VALIDATION, COMPUTATION, OR SCIENTIFIC
+  APPLICATION{]}
+\end{enumerate}
+
+The expected outcome is {[}MAIN CONTRIBUTION{]}.
+
+\subsection{Intellectual Merit}\label{intellectual-merit}
+
+{[}Explain the fundamental statistical/mathematical knowledge that will
+be advanced.{]}
+
+{[}Describe what is genuinely new relative to existing theory and
+methods.{]}
+
+{[}State the expected theoretical, methodological, or computational
+contributions.{]}
+
+\subsection{Broader Impacts}\label{broader-impacts}
+
+{[}Describe concrete impacts through training, software, data,
+education, interdisciplinary research, dissemination, broadening
+participation, or other appropriate mechanisms.{]}
+
+{[}State how impacts will be assessed.{]}
+
+\section{Project Description}\label{project-description}
+
+\subsection{1. Motivation and
+Background}\label{motivation-and-background}
+
+Proportion data arise in many scientific settings. Examples 1, 2, 3 etc.
+Traditionally this type of data has modeled using normal regressions
+techniques with transformations of the response variable such as the the
+arcsin square root transformation. However, this method is known to be
+flawed. Some have even referred to it as ``asinine''. Other alternatives
+include using logistic/ binomial regression, however, these require the
+statistical practitioner to know the denominator (i.e.~the \(n\) of
+these proportions). In many settings all we have is the proportion. In
+these cases, a better alternative is beta regression (CITATION). Beta
+regression is well studied (IS IT?) with established packages available
+in R. \citet{Kosmidis2026}
+
+https://pubmed.ncbi.nlm.nih.gov/21560670/
+
+{[}Introduce the broad scientific or statistical problem.{]}
+
+{[}Explain the current state of knowledge.{]}
+
+{[}Identify the specific limitation or gap.{]}
+
+For example, existing approaches typically rely on {[}ASSUMPTION{]},
+which is problematic when {[}SETTING{]}. Existing methods such as
+{[}METHODS{]} provide useful solutions, but do not address {[}SPECIFIC
+GAP{]} \citep{example2024}.
+
+The proposed research addresses this gap by developing {[}NEW
+FRAMEWORK{]}.
+
+\subsection{2. Central Research
+Question}\label{central-research-question}
+
+The central research question is:
+
+\begin{quote}
+\textbf{{[}CENTRAL RESEARCH QUESTION{]}}
+\end{quote}
+
+The project is guided by the following hypothesis:
+
+\begin{quote}
+\textbf{{[}CENTRAL HYPOTHESIS{]}}
+\end{quote}
+
+\subsection{3. Overall Strategy}\label{overall-strategy}
+
+The proposed work combines {[}THEORY{]}, {[}STATISTICAL METHODOLOGY{]},
+and {[}COMPUTATION/APPLICATION{]}.
+
+The aims are deliberately complementary. Aim 1 establishes
+{[}FOUNDATION{]}; Aim 2 develops {[}METHOD{]}; and Aim 3 evaluates and
+demonstrates {[}CONTRIBUTION{]}.
+
+The project is designed so that failure of any single technical approach
+will not prevent progress toward the overall objective.
+
+\subsection{4. Research Plan}\label{research-plan}
+
+\subsubsection{4.1 Specific Aims}\label{specific-aims}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Aim & Scientific objective & Primary deliverable \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & {[}OBJECTIVE{]} & {[}THEOREM/METHOD{]} \\
+2 & {[}OBJECTIVE{]} & {[}METHOD/SOFTWARE{]} \\
+3 & {[}OBJECTIVE{]} & {[}VALIDATION/APPLICATION{]} \\
+\end{longtable}
+
+\subsubsection{4.2 Conceptual Framework}\label{conceptual-framework}
+
+The proposed framework is:
+
+The framework links {[}COMPONENT 1{]} to {[}COMPONENT 2{]} through
+{[}MECHANISM{]}.
+
+\subsubsection{4.3 Evaluation Strategy}\label{evaluation-strategy}
+
+Each aim will be evaluated using a combination of theoretical analysis,
+simulation, computational benchmarking, and/or scientific validation.
+
+Success will be assessed using prespecified criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  {[}CRITERION 1{]}
+\item
+  {[}CRITERION 2{]}
+\item
+  {[}CRITERION 3{]}
+\item
+  {[}CRITERION 4{]}
+\end{itemize}
+
+\subsection{5. Aim 1: {[}FOUNDATIONAL THEORY OR
+METHOD{]}}\label{aim-1-foundational-theory-or-method}
+
+\subsubsection{Motivation}\label{motivation}
+
+{[}Explain the specific gap addressed by Aim 1.{]}
+
+\subsubsection{Research Question}\label{research-question}
+
+{[}Specific question.{]}
+
+\subsubsection{Proposed Approach}\label{proposed-approach}
+
+We will develop {[}METHOD{]}.
+
+Let \(Y\) denote {[}OUTCOME{]}, \(X\) denote {[}COVARIATES{]}, and
+\(\theta\) denote {[}PARAMETERS{]}. We consider the general model
+
+\[
+[MODEL]
+\]
+
+The principal theoretical objectives are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  {[}OBJECTIVE{]}
+\item
+  {[}OBJECTIVE{]}
+\item
+  {[}OBJECTIVE{]}
+\end{enumerate}
+
+\subsubsection{Theoretical Development}\label{theoretical-development}
+
+{[}Describe identifiability.{]}
+
+{[}Describe consistency.{]}
+
+{[}Describe asymptotic behavior.{]}
+
+{[}Describe efficiency, robustness, or other relevant properties.{]}
+
+\subsubsection{Simulation Study}\label{simulation-study}
+
+The simulation study will vary:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Factor & Levels \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sample size & {[}LEVELS{]} \\
+Signal strength & {[}LEVELS{]} \\
+Missingness/dependence structure & {[}LEVELS{]} \\
+Model misspecification & {[}LEVELS{]} \\
+\end{longtable}
+
+Primary performance measures will include {[}BIAS{]}, {[}RMSE{]},
+{[}COVERAGE{]}, {[}POWER{]}, and {[}COMPUTATIONAL COST{]}.
+
+\subsubsection{Expected Outcomes}\label{expected-outcomes}
+
+Aim 1 will establish {[}EXPECTED CONTRIBUTION{]}.
+
+\subsubsection{Potential Problems and Alternative
+Strategies}\label{potential-problems-and-alternative-strategies}
+
+{[}Technical risk.{]}
+
+{[}Alternative strategy.{]}
+
+{[}Criteria for adopting the alternative.{]}
+
+\subsection{6. Aim 2: {[}STATISTICAL
+METHODOLOGY{]}}\label{aim-2-statistical-methodology}
+
+\subsubsection{Motivation}\label{motivation-1}
+
+{[}Explain why Aim 1 is insufficient by itself and what methodological
+problem remains.{]}
+
+\subsubsection{Proposed Method}\label{proposed-method}
+
+{[}Detailed description of estimator/model/algorithm.{]}
+
+The proposed estimator is
+
+\[
+\widehat{\theta} = [FORMULA].
+\]
+
+{[}Explain estimation.{]}
+
+{[}Explain uncertainty quantification.{]}
+
+{[}Explain computational implementation.{]}
+
+\subsubsection{Benchmarking}\label{benchmarking}
+
+The proposed method will be compared descriptively with established
+alternatives including {[}METHOD 1{]}, {[}METHOD 2{]}, and {[}METHOD
+3{]}.
+
+Evaluation will consider statistical performance, robustness,
+interpretability, and computational scalability.
+
+\subsubsection{Software}\label{software}
+
+The methods will be implemented in an open-source R package, tentatively
+named \texttt{{[}PACKAGE\ NAME{]}}.
+
+The package will include:
+
+\begin{itemize}
+\tightlist
+\item
+  reproducible implementations of all proposed methods;
+\item
+  simulation utilities;
+\item
+  diagnostics;
+\item
+  documentation and examples; and
+\item
+  vignettes reproducing the principal analyses.
+\end{itemize}
+
+\subsubsection{Expected Outcomes}\label{expected-outcomes-1}
+
+{[}Expected contribution.{]}
+
+\subsubsection{Potential Problems and Alternative
+Strategies}\label{potential-problems-and-alternative-strategies-1}
+
+{[}Potential problem and alternative.{]}
+
+\subsection{7. Aim 3: {[}VALIDATION OR SCIENTIFIC
+APPLICATION{]}}\label{aim-3-validation-or-scientific-application}
+
+\subsubsection{Scientific Context}\label{scientific-context}
+
+{[}Describe the scientific problem for which the proposed methodology is
+relevant.{]}
+
+\subsubsection{Data}\label{data}
+
+{[}Describe data source, sample size, variables, and study design.{]}
+
+\subsubsection{Analysis}\label{analysis}
+
+{[}Specify primary analysis.{]}
+
+{[}Specify secondary analyses.{]}
+
+{[}Specify sensitivity analyses.{]}
+
+\subsubsection{Validation}\label{validation}
+
+{[}Describe external validation, simulation-based calibration, held-out
+prediction, replication, or other validation strategy.{]}
+
+\subsubsection{Expected Outcomes}\label{expected-outcomes-2}
+
+{[}Expected scientific contribution.{]}
+
+\subsubsection{Integration Across Aims}\label{integration-across-aims}
+
+{[}Explain how Aim 3 tests whether the theory and methodology developed
+in Aims 1 and 2 produce useful scientific knowledge.{]}
+
+\subsection{8. Preliminary Work}\label{preliminary-work}
+
+Our preliminary work establishes feasibility of the proposed research.
+
+\subsubsection{Preliminary Result 1}\label{preliminary-result-1}
+
+{[}Describe preliminary analysis.{]}
+
+\subsubsection{Preliminary Result 2}\label{preliminary-result-2}
+
+{[}Describe second result.{]}
+
+\begin{longtable}[]{@{}lrrr@{}}
+\toprule\noalign{}
+Method & Bias & RMSE & Coverage \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}Existing method{]} & {[} {]} & {[} {]} & {[} {]} \\
+\hyperref[proposed-method]{Proposed method} & {[} {]} & {[} {]} & {[}
+{]} \\
+\end{longtable}
+
+These preliminary results motivate the proposed development of
+{[}METHOD{]}.
+
+\subsection{9. Intellectual Merit}\label{intellectual-merit-1}
+
+The intellectual merit of the project rests on {[}CENTRAL SCIENTIFIC
+CONTRIBUTION{]}.
+
+\subsubsection{Fundamental Contribution}\label{fundamental-contribution}
+
+{[}Explain the fundamental statistical or mathematical question.{]}
+
+\subsubsection{Methodological
+Innovation}\label{methodological-innovation}
+
+The proposed work advances current methodology by:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  {[}INNOVATION{]}
+\item
+  {[}INNOVATION{]}
+\item
+  {[}INNOVATION{]}
+\end{enumerate}
+
+\subsubsection{Generalizability}\label{generalizability}
+
+{[}Explain why the results will apply beyond the motivating
+application.{]}
+
+The expected contributions include {[}THEORY{]}, {[}METHODOLOGY{]},
+{[}COMPUTATION{]}, and \hyperref[software]{SOFTWARE}.
+
+\subsection{10. Broader Impacts}\label{broader-impacts-1}
+
+\subsection{Broader Impacts}\label{broader-impacts-2}
+
+Chat GPT write this: The proposed research will develop statistical
+methodology for analyzing bounded continuous outcomes that exhibit
+substantial excess zeros. Such outcomes arise in a wide range of
+scientific and social-scientific settings, including proportions, rates,
+utilization measures, adherence measures, ecological indices, and other
+outcomes for which zero represents a meaningful boundary value rather
+than a missing observation. The proposed development of zero-inflated
+penalized beta regression will provide researchers with a principled
+framework for modeling these data while accommodating both the boundary
+mass at zero and the continuous variation among positive observations.
+
+A primary broader impact of the project will be to improve the
+accessibility and reliability of statistical methods for investigators
+who encounter these data in applied research. Existing approaches often
+require researchers to choose between models that inadequately represent
+the zero-generating process and models that fail to account for the
+bounded nature of the nonzero observations. By developing estimation
+procedures, inferential methods, diagnostics, and computational tools
+specifically for zero-inflated beta regression with penalization, this
+project will provide a practical alternative for researchers working
+with high-dimensional or otherwise challenging datasets. The resulting
+methods will be designed for implementation in commonly used statistical
+software, lowering the barrier between methodological development and
+applied use.
+
+The project will also contribute to statistical education and training.
+Modern applied statisticians increasingly encounter outcomes that are
+simultaneously bounded, zero-inflated, and associated with many
+potential predictors. These characteristics are often treated separately
+in introductory statistical modeling, despite their frequent occurrence
+together in contemporary datasets. The proposed work will provide
+examples and computational materials that can be incorporated into
+graduate courses in regression, generalized linear models,
+high-dimensional statistics, and statistical computing. Reproducible
+examples will illustrate how model assumptions, regularization, zero
+inflation, and bounded outcomes interact, providing students with a
+framework for thinking critically about model selection rather than
+treating individual modeling techniques as isolated procedures.
+
+An additional impact will be the development and dissemination of
+open-source computational resources. Software implementing the proposed
+methodology, together with documentation, examples, simulation code, and
+reproducible analyses, will be made publicly available. These resources
+will facilitate independent evaluation of the methods, encourage
+adoption by applied researchers, and provide a foundation for subsequent
+methodological extensions. Whenever possible, computational
+implementations will use established statistical software ecosystems so
+that the methods can be incorporated into existing analytical workflows.
+
+The project will further support the development of researchers through
+mentoring and training in statistical methodology, computation, and
+reproducible research. Students involved in the project will gain
+experience translating theoretical statistical developments into
+computational algorithms and practical analytical tools. Training will
+emphasize not only mathematical and computational skills but also
+communication of statistical methodology to researchers outside
+statistics. This combination of methodological depth and applied
+communication is increasingly important as statistical models are used
+across scientific disciplines.
+
+Finally, the proposed research has the potential to broaden the role of
+statistical methodology in scientific investigations where conventional
+regression models do not adequately reflect the structure of the
+observed data. Rather than developing a method for a single application,
+the project addresses a general class of statistical problems. By making
+the resulting methodology theoretically justified, computationally
+accessible, and reproducible, the project will contribute to the broader
+statistical infrastructure available to researchers studying bounded and
+zero-inflated outcomes.
+
+\subsubsection{10.1 Training}\label{training}
+
+{[}Describe graduate and undergraduate training.{]}
+
+Students will receive training in:
+
+\begin{itemize}
+\tightlist
+\item
+  statistical theory;
+\item
+  reproducible research;
+\item
+  R programming;
+\item
+  scientific communication; and
+\item
+  collaborative research.
+\end{itemize}
+
+\subsubsection{10.2 Open Science and
+Software}\label{open-science-and-software}
+
+{[}Describe planned software and code release.{]}
+
+All appropriate software will be released under an open-source license,
+with documentation and reproducible examples.
+
+\subsubsection{10.3 Education and
+Dissemination}\label{education-and-dissemination}
+
+{[}Courses, workshops, public-facing materials, conferences, tutorials,
+etc.{]}
+
+\subsubsection{10.4 Broadening
+Participation}\label{broadening-participation}
+
+{[}Concrete activities, partnerships, mentoring, or recruitment
+strategies.{]}
+
+\subsubsection{10.5 Assessment}\label{assessment}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Activity
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Target
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Student training & Students completing research experience &
+{[}TARGET{]} \\
+Software & Downloads/citations/users & {[}TARGET{]} \\
+Dissemination & Presentations/workshops & {[}TARGET{]} \\
+Publications & Peer-reviewed products & {[}TARGET{]} \\
+\end{longtable}
+
+\subsection{11. Timeline and Project
+Management}\label{timeline-and-project-management}
+
+The project will be conducted over four years.
+
+\begin{longtable}[]{@{}lcccc@{}}
+\toprule\noalign{}
+Activity & Year 1 & Year 2 & Year 3 & Year 4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Aim 1 & X & X & & \\
+Aim 2 & & X & X & \\
+Aim 3 & & & X & X \\
+Software & X & X & X & X \\
+Student training & X & X & X & X \\
+Dissemination & & X & X & X \\
+\end{longtable}
+
+\subsubsection{Year 1}\label{year-1}
+
+{[}Milestones.{]}
+
+\subsubsection{Year 2}\label{year-2}
+
+{[}Milestones.{]}
+
+\subsubsection{Year 3}\label{year-3}
+
+{[}Milestones.{]}
+
+\subsubsection{Year 4}\label{year-4}
+
+{[}Milestones.{]}
+
+\subsubsection{Risk Management}\label{risk-management}
+
+{[}Describe dependencies and contingency plans.{]}
+
+\subsection{12. Results from Prior NSF
+Support}\label{results-from-prior-nsf-support}
+
+\subsubsection{Award {[}AWARD NUMBER{]}}\label{award-award-number}
+
+\textbf{Title:} {[}TITLE{]}\\
+\textbf{Amount:} \${[}AMOUNT{]}\\
+\textbf{Period:} {[}START--END{]}
+
+\paragraph{Intellectual Merit}\label{intellectual-merit-2}
+
+{[}Results.{]}
+
+\paragraph{Broader Impacts}\label{broader-impacts-3}
+
+{[}Results.{]}
+
+\paragraph{Publications and Products}\label{publications-and-products}
+
+{[}Publications, software, datasets, presentations, or other
+products.{]}
+
+\paragraph{Relationship to Proposed
+Work}\label{relationship-to-proposed-work}
+
+{[}Explain relationship to the current project.{]}
+
+\subsubsection{Award {[}SECOND AWARD, IF
+APPLICABLE{]}}\label{award-second-award-if-applicable}
+
+{[}Repeat structure.{]}
+
+If no qualifying prior NSF support exists, replace this section with the
+appropriate NSF-required statement.
+
+\section{References Cited}\label{references-cited}
+
+\renewcommand{\bibsection}{}
+\bibliography{references.bib}
+
+
+
+
+
+\end{document}

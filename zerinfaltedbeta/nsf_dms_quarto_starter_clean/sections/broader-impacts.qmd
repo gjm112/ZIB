@@ -1,0 +1,51 @@
+## 10. Broader Impacts
+
+## Broader Impacts
+
+Chat GPT write this: 
+The proposed research will develop statistical methodology for analyzing bounded continuous outcomes that exhibit substantial excess zeros. Such outcomes arise in a wide range of scientific and social-scientific settings, including proportions, rates, utilization measures, adherence measures, ecological indices, and other outcomes for which zero represents a meaningful boundary value rather than a missing observation. The proposed development of zero-inflated penalized beta regression will provide researchers with a principled framework for modeling these data while accommodating both the boundary mass at zero and the continuous variation among positive observations.
+
+A primary broader impact of the project will be to improve the accessibility and reliability of statistical methods for investigators who encounter these data in applied research. Existing approaches often require researchers to choose between models that inadequately represent the zero-generating process and models that fail to account for the bounded nature of the nonzero observations. By developing estimation procedures, inferential methods, diagnostics, and computational tools specifically for zero-inflated beta regression with penalization, this project will provide a practical alternative for researchers working with high-dimensional or otherwise challenging datasets. The resulting methods will be designed for implementation in commonly used statistical software, lowering the barrier between methodological development and applied use.
+
+The project will also contribute to statistical education and training. Modern applied statisticians increasingly encounter outcomes that are simultaneously bounded, zero-inflated, and associated with many potential predictors. These characteristics are often treated separately in introductory statistical modeling, despite their frequent occurrence together in contemporary datasets. The proposed work will provide examples and computational materials that can be incorporated into graduate courses in regression, generalized linear models, high-dimensional statistics, and statistical computing. Reproducible examples will illustrate how model assumptions, regularization, zero inflation, and bounded outcomes interact, providing students with a framework for thinking critically about model selection rather than treating individual modeling techniques as isolated procedures.
+
+An additional impact will be the development and dissemination of open-source computational resources. Software implementing the proposed methodology, together with documentation, examples, simulation code, and reproducible analyses, will be made publicly available. These resources will facilitate independent evaluation of the methods, encourage adoption by applied researchers, and provide a foundation for subsequent methodological extensions. Whenever possible, computational implementations will use established statistical software ecosystems so that the methods can be incorporated into existing analytical workflows.
+
+The project will further support the development of researchers through mentoring and training in statistical methodology, computation, and reproducible research. Students involved in the project will gain experience translating theoretical statistical developments into computational algorithms and practical analytical tools. Training will emphasize not only mathematical and computational skills but also communication of statistical methodology to researchers outside statistics. This combination of methodological depth and applied communication is increasingly important as statistical models are used across scientific disciplines.
+
+Finally, the proposed research has the potential to broaden the role of statistical methodology in scientific investigations where conventional regression models do not adequately reflect the structure of the observed data. Rather than developing a method for a single application, the project addresses a general class of statistical problems. By making the resulting methodology theoretically justified, computationally accessible, and reproducible, the project will contribute to the broader statistical infrastructure available to researchers studying bounded and zero-inflated outcomes.
+
+### 10.1 Training
+
+[Describe graduate and undergraduate training.]
+
+Students will receive training in:
+
+- statistical theory;
+- reproducible research;
+- R programming;
+- scientific communication; and
+- collaborative research.
+
+### 10.2 Open Science and Software
+
+[Describe planned software and code release.]
+
+All appropriate software will be released under an open-source license, with documentation and reproducible examples.
+
+### 10.3 Education and Dissemination
+
+[Courses, workshops, public-facing materials, conferences, tutorials, etc.]
+
+### 10.4 Broadening Participation
+
+[Concrete activities, partnerships, mentoring, or recruitment strategies.]
+
+### 10.5 Assessment
+
+| Activity | Metric | Target |
+|---|---|---|
+| Student training | Students completing research experience | [TARGET] |
+| Software | Downloads/citations/users | [TARGET] |
+| Dissemination | Presentations/workshops | [TARGET] |
+| Publications | Peer-reviewed products | [TARGET] |
