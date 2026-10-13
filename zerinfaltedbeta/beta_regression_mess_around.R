@@ -8,7 +8,7 @@ rbetamu <- function(x,mu,phi){
 beta <- 2
 x <- runif(1000,0,1)
 mu <- plogis(0 + beta*x)
-phi <- 5
+phi <- 10
 y <- rbetamu(1000,mu,phi)
 
 plot(x,y)
@@ -35,7 +35,7 @@ ll <- function(theta){
   return(out)
 }
 
-optim(theta, ll)
+optim(c(0,1), ll)
 
 
 llp <- function(theta, lambda){
@@ -45,8 +45,8 @@ llp <- function(theta, lambda){
 }
  
 results <- data.frame() 
-for (i in seq(0,1000,10)){
-theta <- optim(theta, llp, lambda = i)$par
+for (i in seq(0,100,10)){
+theta <- optim(c(1,1), llp, lambda = i)$par
 temp <- data.frame(beta = theta[1],phi = theta[2], lambda = i)
 results <- rbind(results, temp)
 }
