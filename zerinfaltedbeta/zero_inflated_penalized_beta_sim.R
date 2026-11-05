@@ -16,7 +16,7 @@ p <- 5
 n <- 100000
 z <- matrix(rnorm(n*p,0,1), ncol = p)
 x <- matrix(rnorm(n*p,0,1), ncol = p)
-phi <- 100
+phi <- 10
 gamma <- c(1,1,0,0,0)
 beta <- c(0,1,0,1,0)
 
